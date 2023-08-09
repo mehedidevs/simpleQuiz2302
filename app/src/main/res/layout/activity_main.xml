@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Hello World!"
+        android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+    <RadioGroup
+        android:id="@+id/optionsRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/option1RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="option1 " />
+
+        <RadioButton
+            android:id="@+id/option2RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="option2 " />
+
+
+        <RadioButton
+            android:id="@+id/option3RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="option3 " />
+
+
+        <RadioButton
+            android:id="@+id/option4RadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="option4 " />
+
+
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/nextQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="16dp"
+        android:text="Next Question" />
+
+
+</LinearLayout>
