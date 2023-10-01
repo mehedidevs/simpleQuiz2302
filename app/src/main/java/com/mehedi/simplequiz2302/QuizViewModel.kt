@@ -4,11 +4,13 @@ import androidx.lifecycle.ViewModel
 
 class QuizViewModel : ViewModel() {
     private var quizQuestions = DataSource.quizQuestions
-    private var quizQuestion =quizQuestions
+    private var quizList : MutableList<QuizQuestion> =quizQuestions
 
 
     init {
-        quizQuestion.shuffle()
+        quizList.shuffle()
+
+      var dd= quizList[10]
 
     }
 
@@ -20,24 +22,28 @@ class QuizViewModel : ViewModel() {
     }
 
     fun getCurrentQuestion(): QuizQuestion {
-        return quizQuestion[currentQuestionIndex]
+        return quizList[currentQuestionIndex]
     }
+
+
+
 
     fun getNextQuestion(): QuizQuestion? {
         currentQuestionIndex++
-        return if (currentQuestionIndex < quizQuestion.size) {
-            quizQuestion[currentQuestionIndex]
+        return if (currentQuestionIndex < quizList.size) {
+            quizList[currentQuestionIndex]
         } else {
             null
         }
     }
 
     fun checkAnswer(selectedIndex: Int): Boolean {
-        val currentQuestion = quizQuestion[currentQuestionIndex]
+        val currentQuestion = quizList[currentQuestionIndex]
         return if (selectedIndex == currentQuestion.correctAnswerIndex) {
-            score++
+            score +=2
             true
         } else {
+            score--
             false
         }
     }
@@ -48,7 +54,7 @@ class QuizViewModel : ViewModel() {
 
 
     fun getQuestionSize(): Int {
-        return quizQuestion.size
+        return quizList.size
     }
 
 }
