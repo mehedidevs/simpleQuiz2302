@@ -10,7 +10,7 @@ class QuizViewModel : ViewModel() {
     init {
         quizList.shuffle()
 
-      var dd= quizList[10]
+
 
     }
 

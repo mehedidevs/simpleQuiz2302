@@ -1,5 +1,6 @@
 package com.mehedi.simplequiz2302
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -45,7 +46,14 @@ class MainActivity : AppCompatActivity() {
             showCurrentQuestion()
 
         } else {
-            showResult("Your Score : ${viewModel.getScore()} out of ${viewModel.getQuestionSize()} ")
+            var msg = "Your Score : ${viewModel.getScore()} out of ${viewModel.getQuestionSize()} "
+
+
+            val intent = Intent(this@MainActivity, ResultActivity::class.java)
+            intent.putExtra("rslt", msg)
+            startActivity(intent)
+
+            //  showResult("Your Score : ${viewModel.getScore()} out of ${viewModel.getQuestionSize()} ")
 
         }
 
